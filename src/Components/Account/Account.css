@@ -6,7 +6,8 @@
 }
 
 .accountleft {
-  background-image: linear-gradient(to right, #fff5bc, #cec1ff);
+  background:whitesmoke;
+ 
 
   display: flex;
   flex-direction: column;
@@ -14,6 +15,9 @@
   padding: 2vmax;
   box-sizing: border-box;
   overflow-y: auto;
+}
+.accountleft::-webkit-scrollbar{
+  display: none;
 }
 .accountright {
   padding: 2vmax;

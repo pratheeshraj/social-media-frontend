@@ -46,7 +46,8 @@ const Home = () => {
   return loading === true || usersLoading === true ? (
     <Loader />
   ) : (
-    <div className="home">
+  <div className="container">
+      <div className="home">
       <div className="homeleft">
         {posts && posts.length > 0 ? (
           posts.map((post) => (
@@ -81,6 +82,7 @@ const Home = () => {
         )}
       </div>
     </div>
+  </div>
   );
 };
 

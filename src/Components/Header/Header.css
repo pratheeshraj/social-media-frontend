@@ -2,6 +2,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+ 
 }
 
 .header > a {
@@ -12,7 +14,7 @@
 .header > a > svg {
   font-size: 2vmax;
   transition: all 0.5s;
-  color: rgba(0, 0, 0, 0.445);
+  color: rgba(16, 15, 15, 0.445);
 }
 
 .header > a > svg:hover {
@@ -21,6 +23,7 @@
 }
 
 @media screen and (max-width: 600px) {
+ 
   .header > a {
     width: 8vw;
     height: 8vw;

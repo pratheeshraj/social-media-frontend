@@ -1,12 +1,17 @@
 .home {
+  margin-top:10px ;
   box-sizing: border-box;
   display: grid;
   grid-template-columns: 1fr 400px;
   height: 100vh;
+ 
+    /* Hide vertical scrollbar */
+  /* Hide horizontal scrollbar */
+   
 }
 
 .homeleft {
-  background-image: linear-gradient(to right, #fff5bc, #cec1ff);
+  background:whitesmoke;
 
   overflow-y: auto;
   display: flex;
@@ -15,6 +20,10 @@
   padding: 2vmax;
   box-sizing: border-box;
 }
+.homeleft::-webkit-scrollbar {
+  display: none;
+}
+
 .homeright {
   padding: 2vmax;
   box-sizing: border-box;
@@ -28,6 +37,7 @@
   color: rgba(0, 0, 0, 0.507);
   transition: all 0.5s;
 }
+
 .homeUser > img {
   height: 3vmax;
   width: 3vmax;
@@ -40,9 +50,21 @@
   transform: translateY(-10px);
 }
 
+
+@media screen and (max-width: 750px){
+  .home {
+    grid-template-columns: 2fr 200px;
+    padding: 1rem;
+    margin-right: 1rem;
+  }
+}
+
+
 @media screen and (max-width: 600px) {
   .home {
     grid-template-columns: 2fr 1fr;
+    padding: 1rem;
+    margin-right: 1rem;
   }
 
   .homeleft {
