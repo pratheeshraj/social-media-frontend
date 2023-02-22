@@ -1,12 +1,12 @@
 import axios from "axios";
-
+const API= "https://socailmedia-be.onrender.com"
 export const likePost = (id) => async (dispatch) => {
   try {
     dispatch({
       type: "likeRequest",
     });
 
-    const { data } = await axios.get(`/api/v1/post/${id}`);
+    const { data } = await axios.get(`${API}/api/v1/post/${id}`);
     dispatch({
       type: "likeSuccess",
       payload: data.message,
@@ -26,7 +26,7 @@ export const addCommentOnPost = (id, comment) => async (dispatch) => {
     });
 
     const { data } = await axios.put(
-      `/api/v1/post/comment/${id}`,
+      `${API}/api/v1/post/comment/${id}`,
       {
         comment,
       },
@@ -54,7 +54,7 @@ export const deleteCommentOnPost = (id, commentId) => async (dispatch) => {
       type: "deleteCommentRequest",
     });
 
-    const { data } = await axios.delete(`/api/v1/post/comment/${id}`, {
+    const { data } = await axios.delete(`${API}/api/v1/post/comment/${id}`, {
       data: { commentId },
     });
     dispatch({
@@ -76,7 +76,7 @@ export const createNewPost = (caption, image) => async (dispatch) => {
     });
 
     const { data } = await axios.post(
-      `/api/v1/post/upload`,
+      `${API}/api/v1/post/upload`,
       {
         caption,
         image,
@@ -106,7 +106,7 @@ export const updatePost = (caption, id) => async (dispatch) => {
     });
 
     const { data } = await axios.put(
-      `/api/v1/post/${id}`,
+      `${API}/api/v1/post/${id}`,
       {
         caption,
       },
@@ -134,7 +134,7 @@ export const deletePost = (id) => async (dispatch) => {
       type: "deletePostRequest",
     });
 
-    const { data } = await axios.delete(`/api/v1/post/${id}`);
+    const { data } = await axios.delete(`${API}/api/v1/post/${id}`);
     dispatch({
       type: "deletePostSuccess",
       payload: data.message,
